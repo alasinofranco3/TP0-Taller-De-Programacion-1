@@ -7,6 +7,6 @@ Padron:102165
 
 URL:https://github.com/alasinofranco3/TP0.git
 
-0. Paso 0
-  a.inciso a
-  b.inciso b
+1. Paso 0
+  1.inciso a
+  1.inciso b
