@@ -13,11 +13,11 @@ URL:https://github.com/alasinofranco3/TP0.git
     1. La funcion sizeof() devuelve el tamanio en bytes del tipo de dato pasado o variable por parametro.El valor de salida de dicha funcion depende de la arquitectura de nuestra computadora. En mi caso al tener una de 64 bits,sizeof(char) devolveria un 1 mientras que sizeof(int) devolveria 4.
     1. No necesariamente,el sizeof() de un struct en c no siempre es igual a la suma de los sizeof() de cada elemento.Por ejemplo,si yo tuviese un struct declarado de la siguiente manera:
     
-    < struct S{>
-    	<short a;>
-    	<char b;>
-    	<int c;>
-    <}>
+        < struct S{>
+    	   <short a;>
+    	   <char b;>
+    	   <int c;>
+        <}>
     
     La suma de los sizeof() de cada elemento seria igual a 7, sabiendo que el sizeof(short) es de 2 bytes en arquitectura de 64 bits.Sin embargo, al hacer sizeof() de uno de nuestros struct nos da 8.
     1. 
