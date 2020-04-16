@@ -8,7 +8,7 @@ Padron:102165
 URL:https://github.com/alasinofranco3/TP0.git
 
 1. Paso 0
-    1. ![Captura de pantalla del paso 0](/home/franco/Imágenes/captura_paso0.jpg)
+    1. ![Captura de pantalla del paso 0](https://user-images.githubusercontent.com/50004705/79463028-af581f80-7fce-11ea-9506-c177c84c679b.png)
     1.  Valgrind nos permite detectar problemas con el uso de memoria de nuestro programa.Nos permite saber en que lineas ocurren estos problemas,cuantos errores tenemos,de que tipo son estos,para poder facilitar la correccion de estos y asi evitar perdidas de memoria y asegurar la liberacion de los recursos utilizados.
     1. La funcion sizeof() devuelve el tamanio en bytes del tipo de dato pasado o variable por parametro.El valor de salida de dicha funcion depende de la arquitectura de nuestra computadora. En mi caso al tener una de 64 bits,sizeof(char) devolveria un 1 mientras que sizeof(int) devolveria 4.
     1. No necesariamente,el sizeof() de un struct en c no siempre es igual a la suma de los sizeof() de cada elemento.Por ejemplo,si yo tuviese un struct declarado de la siguiente manera:
