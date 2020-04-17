@@ -45,3 +45,23 @@ URL:https://github.com/alasinofranco3/TP0.git
         1. Idem 2
         * Todos estos son errores del compilador.
     1. No ,no se reporto ningun warning.Esto ocurrio porque se compilo usando el archivo MAKEFILE,en este se especifica usar el comando -Werror para compilar que hace que todos los warnings sean reportados como errores.
+
+1. Paso 2
+    1. Diferencias:
+        * main.c: En el paso 2 se agrega el .h del wordscounter.Ademas, se cambio el strcpy() por un memcpy() para evitar asi posibles poblemas.Finalmente se resolvio el problema de incumplimiento de normas del else colocando dicha estructura al lado de la llave '}' anterior.
+        * wordscounter.c: En este archivo podemos ver que se arreglan varios de los incumplimientos de normas de programacion que teniamos en el paso1.
+        Por ejemplo:dejar un espacio entre el nombre de la estructura de control y el parentesis de los argumentos,dejar los mismos espacios despues de '(' y antes de ')' en la condicion de un if,entr otros.
+        * wordscounter.h: se modifico un comentario que describe la funcion de el tipo wordscounter_t.
+    1. ![Cumplimiento de normas](/home/franco/Imágenes/paso2_cumplimiento_normas.png) //Agregar imagen
+    1. ![Errores generacion exe](/home/franco/Imágenes/paso2_errores_ejecutable.png)  //Agregar imagen
+        1. Indica que el compilador no reconoce el tipo de dato llamado "size_t" 
+        1. Idem 1.
+        1. Idem 1,pero en este caso con el tipo de dato llamada "FILE"  
+        1. Indica que hay un conflicto con los tipos,es decir,el compilador encuentra que los tipos en la declaracion de la funcion en el .h no coinciden con los tipos de dicha funcion en el .c .
+        1. Nos indica cual fue la declaracion de la funcion y asi facilitarnos la resolucion del error anterior.
+        1. Indica que el compilador no encontro la declaracion de la funcion malloc().
+        1. Este error sirve como ayuda para arreglar el error anterior,nos dice que incluyamos la libreria stdlib.h o que le demos alguna otra declaracion de la funcion malloc().
+
+        * Todos estos son errores del compilador
+
+1. Paso 3
