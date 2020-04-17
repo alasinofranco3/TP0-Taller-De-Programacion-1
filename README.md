@@ -34,15 +34,15 @@ URL:https://github.com/alasinofranco3/TP0.git
         1. Idem 1.Indica que debemos colocar un espacio entre el if y el () donde van los parametros.
         1. Indica que hay un espacio de mas antes del ';'. Deberiamos poner return x;.
         1. Nos advierte que en la mayoria de los casos es mejor usar snprintf que strcpy.Por ejemplo al usar strcpy se pueden producir desbordes de buffer.
-        1. Idem 4.
-        1. Idem 5.
+        1. Idem d.
+        1. Idem e.
         1. Indica que las lineas pueden tener como maximo 80 caracteres.
     1. ![Error ejecutable](/home/franco/Imágenes/paso1_error_ejecutable.png)
         1. Indica que no se reconoce el tipo de dato 'wordscounter_t', es decir,el compilador no encontro la declaracion de dicho tipo de dato.
         1. Indica que estamos declarando una funcion implicitamente,es decir,el compilador no encontro la declaracion de la dicha funcion.
-        1. Idem 2
-        1. Idem 2
-        1. Idem 2
+        1. Idem b
+        1. Idem b
+        1. Idem b
         * Todos estos son errores del compilador.
     1. No ,no se reporto ningun warning.Esto ocurrio porque se compilo usando el archivo MAKEFILE,en este se especifica usar el comando -Werror para compilar que hace que todos los warnings sean reportados como errores.
 
@@ -56,7 +56,7 @@ URL:https://github.com/alasinofranco3/TP0.git
     1. ![Errores generacion exe](/home/franco/Imágenes/paso2_errores_ejecutable.png)  
         1. Indica que el compilador no reconoce el tipo de dato llamado "size_t" 
         1. Idem 1.
-        1. Idem 1,pero en este caso con el tipo de dato llamada "FILE"  
+        1. Idem 1,pero en este caso con el tipo de dato llamado "FILE"  
         1. Indica que hay un conflicto con los tipos,es decir,el compilador encuentra que los tipos en la declaracion de la funcion en el .h no coinciden con los tipos de dicha funcion en el .c .
         1. Nos indica cual fue la declaracion de la funcion y asi facilitarnos la resolucion del error anterior.
         1. Indica que el compilador no encontro la declaracion de la funcion malloc().
@@ -65,3 +65,12 @@ URL:https://github.com/alasinofranco3/TP0.git
         * Todos estos son errores del compilador
 
 1. Paso 3
+    1. Cambios:
+        * wordscounter.h: En el paso 3 se agregaron las librerias stdio.h y string.h
+        * wordscounter.c: En el paso 3 se agrego la libreria stdlib.h
+        * main.c: No hubo cambios.
+    1. ![Paso 3 error](/home/franco/Imágenes/paso3_error.png)  
+        1. Este error nos indica que la funcion wordscounter_destroy no esta definida.Este es un error propio del linker.
+
+1. Paso 4 
+    
