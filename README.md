@@ -52,8 +52,8 @@ URL:https://github.com/alasinofranco3/TP0.git
         * wordscounter.c: En este archivo podemos ver que se arreglan varios de los incumplimientos de normas de programacion que teniamos en el paso1.
         Por ejemplo:dejar un espacio entre el nombre de la estructura de control y el parentesis de los argumentos,dejar los mismos espacios despues de '(' y antes de ')' en la condicion de un if,entr otros.
         * wordscounter.h: se modifico un comentario que describe la funcion de el tipo wordscounter_t.
-    1. ![Cumplimiento de normas](/home/franco/Imágenes/paso2_cumplimiento_normas.png) //Agregar imagen
-    1. ![Errores generacion exe](/home/franco/Imágenes/paso2_errores_ejecutable.png)  //Agregar imagen
+    1. ![Cumplimiento de normas](/home/franco/Imágenes/paso2_cumplimiento_normas.png)
+    1. ![Errores generacion exe](/home/franco/Imágenes/paso2_errores_ejecutable.png)  
         1. Indica que el compilador no reconoce el tipo de dato llamado "size_t" 
         1. Idem 1.
         1. Idem 1,pero en este caso con el tipo de dato llamada "FILE"  
