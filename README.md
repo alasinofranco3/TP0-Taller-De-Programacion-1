@@ -47,7 +47,7 @@ URL:https://github.com/alasinofranco3/TP0.git
     1. No ,no se reporto ningun warning.Esto ocurrio porque se compilo usando el archivo MAKEFILE,en este se especifica usar el comando -Werror para compilar que hace que todos los warnings sean reportados como errores.
 
 1. Paso 2
-    1. Diferencias:
+    1. Cambios:
         * main.c: En el paso 2 se agrega el .h del wordscounter.Ademas, se cambio el strcpy() por un memcpy() para evitar asi posibles poblemas.Finalmente se resolvio el problema de incumplimiento de normas del else colocando dicha estructura al lado de la llave '}' anterior.
         * wordscounter.c: En este archivo podemos ver que se arreglan varios de los incumplimientos de normas de programacion que teniamos en el paso1.
         Por ejemplo:dejar un espacio entre el nombre de la estructura de control y el parentesis de los argumentos,dejar los mismos espacios despues de '(' y antes de ')' en la condicion de un if,entr otros.
@@ -73,4 +73,32 @@ URL:https://github.com/alasinofranco3/TP0.git
         1. Este error nos indica que la funcion wordscounter_destroy no esta definida.Este es un error propio del linker.
 
 1. Paso 4 
-    
+    1. Cambios:
+        * wordscounter.h: No hubo cambios.
+        * wordscounter.c: En el paso 4 se agrego una definicion para la funcion wordscounter_destroy,esta no hace nada.
+        * main.c: No hubo cambios.
+    1. ![Paso 4 TDA error](/home/franco/Imágenes/paso4_TDA_valgrind_error.png)  
+        1. En el apartado de FILE DESCRIPTORS ,nos indican que a la salida del programa quedaron archivos abiertos.En este caso son :el stderr(file descriptor 2),el stdin(file descriptor 0) y el stdout(file descriptor 1). 
+        1. El primer error del heap summary nos indica que hay memoria que se pierde que todavia puede ser recuperada.Esta perdida es producto de que no se cerro el archivo abierto en la linea 14 del main.c.Por lo tanto,no se liberaron los recursos asignados en su apertura.
+        1. El segundo error del heap summary nos indica que hay memoria que se perdio definitivamente.Ademas nos indica que dicha memoria fue alocada en la linea 35 del wordscounter.c.
+
+    1. ![Paso 4 Long filename error](/home/franco/Imágenes/paso4_long_filename_valgrind_error.png) 
+        1. El primer error reporta un buffer overflow (desborde de buffer) producido por el uso de la funcion memcpy().
+        1. Luego se nos indica que a la salida del programa quedaron el stdin y el stdout abiertos.
+
+    1. En mi opinion este error no se solucionaria usando strncpy(), ya que en caso de que nuestro buffer destino sea de un tamanio menor que n o que el string de destino estariamos en la misma situacion y esa informacion sobrante sobreescribiria la memoria adyacente al buffer.En ese caso,la prueba tendria el mismo resultado: un buffer overflow.
+
+    1. Un buffer overflow se produce cuando nosotros asignamos un tamanio determinado a un buffer e intentamos guardar algo de un tamanio mayor en el.Lo que ocurre es que la informacion que no entra en el buffer,va a guardarse en la memoria que le sigue al fin del buffer,permitiendo asi que la informacion que alli se encuentra sea sobreescrita.
+    Por otro lado,segmentation fault es un error que se produce al acceder a un area de memoria prohibida o de acceso restringido.
+
+1. Paso 5
+    1. Cambios:
+        
+
+
+
+
+
+
+
+
