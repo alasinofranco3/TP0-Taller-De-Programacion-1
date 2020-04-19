@@ -111,8 +111,17 @@ URL:https://github.com/alasinofranco3/TP0.git
 
         * El debugger no se detuvo en la linea del breakpoint porque el programa termino sin llegar a ejecutar esa linea,el flujo del programa en este caso no llego hasta alli.
 1. Paso 6
-    1. 
+    1. Cambios:
+        * wordscounter.h: No hubo cambios.
+        * wordscounter.c: En el paso 6 se realizaron varios cambios en este archivo:
+            * Se agrego una constante DELIM_WORDS que vale " ,.;:\n".
+            * Se cambio el bloque de codigo de las lineas 38 a 41 del paso5 por aquel de las lineas 37 a 41 del paso6.
+            * Se agrego una '}' en la linea 43.
+            * Se cambio la linea 4 del paso5 por el bloque de las lineas 45 a 48 del paso6.
 
+        * main.c: En el paso 6 ,se cambia el valor ERROR ,que antes era -1, por 1.
+    1. ![Paso 6 entregas](/home/franco/Imágenes/paso6_entregas.png)
+    1. ![Paso 6 ejecucion](/home/franco/Imágenes/paso6_ejecucion.png) 
 
 
 
