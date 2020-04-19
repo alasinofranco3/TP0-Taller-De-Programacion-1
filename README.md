@@ -25,7 +25,7 @@ URL:https://github.com/alasinofranco3/TP0.git
       1. Los archivos STDIN, STDOUT y STDERR corresponden al archivo de entrada estandar,salida estandar y standard error.Estos archivos se abren automaticamente y permanecen abiertos siempre.Podemos mandar mensajes a estos archivos como por ejemplo si queremos mostrar algo por pantalla(salida estandar) le podemos mandar un mensaje al STDOUT o si queremos enviar algun mensaje al teclado (entrada estandar) podemos usar STDIN. Para redigir el STDIN debemos utilizar <, esto nos permitiria tomar la entrada de un archivo cualquiera en vez del teclado por ejemplo.En el caso de la salida se utiliza >  y nos permite hacer lo mismo,redirigir la salida a un archivo distinto al STDOUT(pantalla).Para redirigir el STDERR se usa tambien el >.Para conectar la salida de un proceso a la entrada de otro se puede usar un pipe ('|').Haciendo A | B eviariamos la salida del proceso A a la entrada del proceso B.
 
 1. Paso 1 
-    1. ![Problemas de estilo detectados](/home/franco/Imágenes/paso1_problemas_estilo.png)
+    1. ![Problemas de estilo detectados](https://user-images.githubusercontent.com/50004705/79699682-65d63180-8267-11ea-87a8-16179369f02d.png)
         1. Indica que debemos colocar un espacio entre el while y el () donde van los parametros.ej:while (parametros).
         1. Indica que los espacios a continuacion de '(' y anteriores a ')' no coinciden,cuando deberian hacerlo.ej: if ( parametro )
         1. Indica que se permite dejar como maximo un espacio despues de '(' y antes de ')'.ej: if (parametro) o if ( parametro ).
@@ -37,7 +37,7 @@ URL:https://github.com/alasinofranco3/TP0.git
         1. Idem d.
         1. Idem e.
         1. Indica que las lineas pueden tener como maximo 80 caracteres.
-    1. ![Error ejecutable](/home/franco/Imágenes/paso1_error_ejecutable.png)
+    1. ![Error ejecutable](https://user-images.githubusercontent.com/50004705/79699680-61aa1400-8267-11ea-92d9-84bf6aaaa7f8.png)
         1. Indica que no se reconoce el tipo de dato 'wordscounter_t', es decir,el compilador no encontro la declaracion de dicho tipo de dato.
         1. Indica que estamos declarando una funcion implicitamente,es decir,el compilador no encontro la declaracion de la dicha funcion.
         1. Idem b
@@ -52,8 +52,8 @@ URL:https://github.com/alasinofranco3/TP0.git
         * wordscounter.c: En este archivo podemos ver que se arreglan varios de los incumplimientos de normas de programacion que teniamos en el paso1.
         Por ejemplo:dejar un espacio entre el nombre de la estructura de control y el parentesis de los argumentos,dejar los mismos espacios despues de '(' y antes de ')' en la condicion de un if,entr otros.
         * wordscounter.h: se modifico un comentario que describe la funcion de el tipo wordscounter_t.
-    1. ![Cumplimiento de normas](/home/franco/Imágenes/paso2_cumplimiento_normas.png)
-    1. ![Errores generacion exe](/home/franco/Imágenes/paso2_errores_ejecutable.png)  
+    1. ![Cumplimiento de normas](https://user-images.githubusercontent.com/50004705/79699685-679ff500-8267-11ea-9817-332288d0595c.png)
+    1. ![Errores generacion exe](https://user-images.githubusercontent.com/50004705/79699690-6ec70300-8267-11ea-993a-832beb719fd3.png)  
         1. Indica que el compilador no reconoce el tipo de dato llamado "size_t" 
         1. Idem 1.
         1. Idem 1,pero en este caso con el tipo de dato llamado "FILE"  
@@ -69,7 +69,7 @@ URL:https://github.com/alasinofranco3/TP0.git
         * wordscounter.h: En el paso 3 se agregaron las librerias stdio.h y string.h
         * wordscounter.c: En el paso 3 se agrego la libreria stdlib.h
         * main.c: No hubo cambios.
-    1. ![Paso 3 error](/home/franco/Imágenes/paso3_error.png)  
+    1. ![Paso 3 error](https://user-images.githubusercontent.com/50004705/79699693-6ff83000-8267-11ea-9795-d2ca84c3cdf2.png)  
         1. Este error nos indica que la funcion wordscounter_destroy no esta definida.Este es un error propio del linker.
 
 1. Paso 4 
@@ -77,12 +77,12 @@ URL:https://github.com/alasinofranco3/TP0.git
         * wordscounter.h: No hubo cambios.
         * wordscounter.c: En el paso 4 se agrego una definicion para la funcion wordscounter_destroy,esta no hace nada.
         * main.c: No hubo cambios.
-    1. ![Paso 4 TDA error](/home/franco/Imágenes/paso4_TDA_valgrind_error.png)  
+    1. ![Paso 4 TDA error](https://user-images.githubusercontent.com/50004705/79699695-71295d00-8267-11ea-895c-39f2d4c2227e.png)  
         1. En el apartado de FILE DESCRIPTORS ,nos indican que a la salida del programa quedaron archivos abiertos.En este caso son :el stderr(file descriptor 2),el stdin(file descriptor 0) y el stdout(file descriptor 1). 
         1. El primer error del heap summary nos indica que hay memoria que se pierde que todavia puede ser recuperada.Esta perdida es producto de que no se cerro el archivo abierto en la linea 14 del main.c.Por lo tanto,no se liberaron los recursos asignados en su apertura.
         1. El segundo error del heap summary nos indica que hay memoria que se perdio definitivamente.Ademas nos indica que dicha memoria fue alocada en la linea 35 del wordscounter.c.
 
-    1. ![Paso 4 Long filename error](/home/franco/Imágenes/paso4_long_filename_valgrind_error.png) 
+    1. ![Paso 4 Long filename error](https://user-images.githubusercontent.com/50004705/79699694-7090c680-8267-11ea-8e8d-60e9cc8efe8e.png) 
         1. El primer error reporta un buffer overflow (desborde de buffer) producido por el uso de la funcion memcpy().
         1. Luego se nos indica que a la salida del programa quedaron el stdin y el stdout abiertos.
 
@@ -96,12 +96,12 @@ URL:https://github.com/alasinofranco3/TP0.git
         * wordscounter.h: No hubo cambios.
         * wordscounter.c: En el paso 5 se utiliza un vector de caracteres constante para guardar los delimitadores en vez de guardarlos en memoria como se hacia en el paso anterior.
         * main.c: En el paso 5 la apertura del archivo se hace directamentente pasandole por parametro al fopen() el argv[1].Ademas en este paso,se agrega el cierre del archivo "input" en caso de no ser el stdin.
-    1. ![Paso 5 errores sercom](/home/franco/Imágenes/paso5_sercom_error.png) 
+    1. ![Paso 5 errores sercom](https://user-images.githubusercontent.com/50004705/79699698-725a8a00-8267-11ea-8f9a-2ee5cec10440.png) 
         * En la prueba invalid file: el sercom nos indica que se esperaba un codigo de retorno 1 pero,se obtuvo 255.Al usar un archivo invalido el main.c nos devuelve el codigo de error -1.Finalmente,supongo que en vez de interpretar ese -1 como decimal lo expresa como binario en complemento a 2,es por esto que el valor de retorno es 255.
         * En la prueba single word:el sercom nos indica que la salida estandar no coincide con lo esperado.En este caso deberia devolver un 1 ya que tenemos un archivo con una sola palabra.
-    1. ![Paso 5 hexdump](/home/franco/Imágenes/paso5_hexdump.png) 
+    1. ![Paso 5 hexdump](https://user-images.githubusercontent.com/50004705/79699697-725a8a00-8267-11ea-821e-b64fc6854f58.png) 
         1. El ultimo caracter del archivo es la letra 'd'.Esto sale de saber que la representacion en hexa el ultimo caracter del archivo es 64,si lo pasamos a decimal da el numero 100, que en la tabla ASCII corresponde al caracter 'd'.
-    1. ![Paso 5 gdb](/home/franco/Imágenes/paso5_gdb.png) 
+    1. ![Paso 5 gdb](https://user-images.githubusercontent.com/50004705/79699696-71c1f380-8267-11ea-83de-703a446b15d7.png) 
         1. Comandos:
             1. info functions: Nos indica todos los nombres de funcion.
             1. list: Nos lista una determinada linea o funcion.
@@ -120,8 +120,8 @@ URL:https://github.com/alasinofranco3/TP0.git
             * Se cambio la linea 4 del paso5 por el bloque de las lineas 45 a 48 del paso6.
 
         * main.c: En el paso 6 ,se cambia el valor ERROR ,que antes era -1, por 1.
-    1. ![Paso 6 entregas](/home/franco/Imágenes/paso6_entregas.png)
-    1. ![Paso 6 ejecucion](/home/franco/Imágenes/paso6_ejecucion.png) 
+    1. ![Paso 6 entregas](https://user-images.githubusercontent.com/50004705/79699702-738bb700-8267-11ea-8f09-14f7c5d4a0cb.png)
+    1. ![Paso 6 ejecucion](https://user-images.githubusercontent.com/50004705/79699701-72f32080-8267-11ea-8196-37a19cde274a.png) 
 
 
 
