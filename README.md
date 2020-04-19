@@ -93,10 +93,25 @@ URL:https://github.com/alasinofranco3/TP0.git
 
 1. Paso 5
     1. Cambios:
-        
+        * wordscounter.h: No hubo cambios.
+        * wordscounter.c: En el paso 5 se utiliza un vector de caracteres constante para guardar los delimitadores en vez de guardarlos en memoria como se hacia en el paso anterior.
+        * main.c: En el paso 5 la apertura del archivo se hace directamentente pasandole por parametro al fopen() el argv[1].Ademas en este paso,se agrega el cierre del archivo "input" en caso de no ser el stdin.
+    1. ![Paso 5 errores sercom](/home/franco/Imágenes/paso5_sercom_error.png) 
+        * En la prueba invalid file: el sercom nos indica que se esperaba un codigo de retorno 1 pero,se obtuvo 255.Al usar un archivo invalido el main.c nos devuelve el codigo de error -1.Finalmente,supongo que en vez de interpretar ese -1 como decimal lo expresa como binario en complemento a 2,es por esto que el valor de retorno es 255.
+        * En la prueba single word:el sercom nos indica que la salida estandar no coincide con lo esperado.En este caso deberia devolver un 1 ya que tenemos un archivo con una sola palabra.
+    1. ![Paso 5 hexdump](/home/franco/Imágenes/paso5_hexdump.png) 
+        1. El ultimo caracter del archivo es la letra 'd'.Esto sale de saber que la representacion en hexa el ultimo caracter del archivo es 64,si lo pasamos a decimal da el numero 100, que en la tabla ASCII corresponde al caracter 'd'.
+    1. ![Paso 5 gdb](/home/franco/Imágenes/paso5_gdb.png) 
+        1. Comandos:
+            1. info functions: Nos indica todos los nombres de funcion.
+            1. list: Nos lista una determinada linea o funcion.
+            1. break: Agrega un breakpoint en la linea indicada,es decir, que el programa detendra su ejecucion al llegar a dicha linea.
+            1. run: Corre el programa
+            1. quit: sale del gbd.
 
-
-
+        * El debugger no se detuvo en la linea del breakpoint porque el programa termino sin llegar a ejecutar esa linea,el flujo del programa en este caso no llego hasta alli.
+1. Paso 6
+    1. 
 
 
 
